@@ -1,0 +1,3 @@
+"Nuestro proceso de desarollo fue mas fluido y la cooperacion y cordinacion mejoraron considerablemente. 
+Tenemos sin embargo que afrontar mejor coordinación para manejo de GitHub, con lo que consideramos hacer subidas a sincronías y mantenernos vigentes de las actualizaciones haciéndolas estrictamente con el aval grupal, por escrito o voz.
+Otra preocupación es deshacerse de material inútil, como por ejemplo código viejo o versiones desactualizadas, que pueden confundir o trabar el desarrollo del código."
