@@ -1,0 +1,41 @@
+[
+ {
+  "name": "Pepe alfonso",
+  "email": "ivan.rebora@hotmail.com",
+  "dateBrith": "2021-04-05",
+  "address": "Olleros 1768",
+  "interests": "Videojuegos",
+  "fileavatar": "",
+  "password": "1234",
+  "confirmpass": "1234",
+  "id": 4
+ },
+ {
+  "name": "jose alvarez",
+  "email": "jose@gmail.com",
+  "dateBrith": "2021-03-29",
+  "address": "Olleros 1768",
+  "interests": "Videojuegos",
+  "fileavatar": "",
+  "password": "1234",
+  "confirmpass": "1234",
+  "id": 5
+ },
+ {
+  "id": 6
+ },
+ {
+  "id": 7
+ },
+ {
+  "name": "ivan",
+  "email": "ivan.rebora@hotmail.com",
+  "dateBrith": "2021-03-02",
+  "address": "Olleros 1768",
+  "interests": "Cine",
+  "fileavatar": "logInMobile.jpg",
+  "password": "1234",
+  "confirmpass": "1234",
+  "id": 8
+ }
+]

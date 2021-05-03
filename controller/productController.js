@@ -1,4 +1,8 @@
-let productos = require('../data/productsData');
+//let productos = require('../data/productsData');
+
+const jsonDB = require('../model/jsonDatabase');
+
+const productModel = jsonDB('products');
 
 let productController = {
 
@@ -20,11 +24,11 @@ let productController = {
     show: (req, res) => {
         console.log('me hicieron click :' + req.params.id)
 
-        let product = productos.find(function (value) {
-            console.log('me encoraron:' + value.id)
-            return value.id === req.params.id
-        })
-
+      //  let product = productos.find(function (value) {
+        //    console.log('me encoraron:' + value.id)
+          //  return value.id === req.params.id
+        //})
+        const product = productModel.find(req.params.id);
         console.log(product)
         if (product) {
           res.render('productDesc', { product });
@@ -37,11 +41,18 @@ let productController = {
         console.log('entre al storess')
         console.log(req.body)
 
-        const maxIdProduct = productos.reduce( (curr, next) => curr.id >= next.id ? curr : next );
+        const product = req.body;
+        product.image = req.file ? req.file.filename : '';
+      
+        console.log(product.image)
+        productModel.create(product);
+
+
+        //const maxIdProduct = productos.reduce( (curr, next) => curr.id >= next.id ? curr : next );
    
 
-        let producto =
-        {
+       // let producto =
+        /*{
 
             id: maxIdProduct.id + 1,
             name: req.body.name,
@@ -52,17 +63,15 @@ let productController = {
             image: req.body.image
 
         }
-        productos.push(producto)
+        productos.push(producto)*/
       
         res.redirect('/')
     },
     edit: (req, res) => {
         console.log('ESTOY ENTRANDO AL METODO EDIT:')
 
-        let product = productos.find(function (value) {
+        let product = productModel.find(req.params.id);
 
-            return value.id === req.params.id
-        })
 
         console.log(product)
         if (product) {
@@ -76,7 +85,20 @@ let productController = {
         console.log('Entré al Update')
         console.log(req.body)
 
-        let producto = {
+        let  product = req.body;
+        
+        product.id = req.params.id;
+
+        product.image = req.file ? req.file.filename : req.body.oldImagen;
+        
+        if (req.body.image===undefined) {
+          product.image = product.oldImage
+      }
+      
+      delete product.oldImage;
+      
+        productModel.update(product);
+       /* let producto = {
 
             id: req.params.id,
             name: req.body.name,
@@ -102,7 +124,7 @@ let productController = {
             }
 
         })
-        console.log(productos)
+        console.log(productos)*/
 
         res.redirect('/')
     },
@@ -112,7 +134,9 @@ let productController = {
         console.log(req.params.id)
 
 
-        let menorArray = productos.filter(function (value) {
+        productModel.delete(req.params.id);
+
+      /*  let menorArray = productos.filter(function (value) {
 
             return value.id !== req.params.id
         })
@@ -120,7 +144,7 @@ let productController = {
         console.log(menorArray)
         productos = [...menorArray]
         console.log('----------ARRAY VISITADOS')
-        console.log(productos)
+        console.log(productos)*/
         res.redirect('/')
     },
 
