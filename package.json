@@ -1,15 +1,14 @@
 {
-  "name": "gitstatus_sprint2",
+  "name": "gitstatus_sprint4",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "node": "114.15.4",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vrana99/GitStatus_Sprint2.git"
+    "url": "git+https://github.com/ipav-FS/-gitstatus_Sprint4"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +23,4 @@
     "method-override": "^3.0.0",
     "multer": "^1.4.2"
   }
-
-
 }
